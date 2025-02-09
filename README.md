@@ -1,14 +1,44 @@
-# RuleSurf: AI-Assisted Development Rule Management System
+# RuleSurf: Adaptive AI Development Framework (Version: 1.0.0)
 
 ## Overview
 
-RuleSurf is a comprehensive rule management system designed to enhance AI-assisted development workflows. It provides a structured approach to defining, tracking, and evolving development guidelines, commands, and best practices.
+RuleSurf is an intelligent development framework that enables persistent, context-aware AI-assisted development across project sessions.
+
+## Getting Started
+
+### Project Initialization
+
+1. Fork this repository
+2. Clone to your local machine
+3. Copy `.windsurfrules.template` to `.windsurfrules`
+4. Fill out project details in `.windsurfrules`
+5. Initialize Adaptive Project State (APS) with `init` command
+
+### How This Works
+
+- `.windsurfrules`: Your project configuration (you own this)
+- `global_rules.md`: Adaptive Project State (AI maintains this)
+- Commands: Use these to interact with AI
+
+### Key Commands
+
+- `init`: Start/resume project work
+- `/d`: Get next steps + code changes
+- `/c`: Get copyable code snippet
+- `save`: Preserve current progress
+
+### Prerequisites
+
+- Windsurf IDE (recommended)
+- Python 3.9+
+- Git
 
 ## Setup for Windsurf Users
 
 ### Initial Configuration
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/RuleSurf.git
    cd RuleSurf
@@ -17,12 +47,25 @@ RuleSurf is a comprehensive rule management system designed to enhance AI-assist
 2. Configure Windsurf IDE:
    - Copy `.windsurfrules` to your Windsurf project directory
    - Review and customize `global_rules.md` to match your development workflow
+   - Copy contents of `global_rules.md` to WindSurf settings -> Set Global AI rules or move to your /.codeium/windsurf/memories directory
 
 ### File Purpose Guide
 
-- `.windsurfrules`: Project-specific rules and task tracking
-- `global_rules.md`: Universal development practices and command shorthands
-- `resources/`: Additional support files and templates
+- `.windsurfrules`: Project source of truth (user-owned)
+  - Project requirements and specifications
+  - Technical stack decisions
+  - AI-assisted setup planning
+  - User-defined project rules
+
+- `global_rules.md`: Adaptive Project State (APS)
+  - AI-maintained project state
+  - Command reference
+  - Task tracking with standardized status markers:
+    - [ ] Todo
+    - [⚒️] In Progress
+    - [✓] Complete
+    - [!] Blocked
+    - [~] Deferred
 
 ### Customization Tips
 
@@ -32,24 +75,38 @@ RuleSurf is a comprehensive rule management system designed to enhance AI-assist
 
 ## Key Features
 
-- Dynamic rule addition and tracking
-- Flexible command structures
-- Robust context management
-- Recursive development cycle support
-- Platform-specific considerations
+- **Adaptive Context Management**
+  - Persistent project state tracking
+  - Intelligent context preservation
+  - Seamless cross-session continuity
+
+- **Recursive Development Cycle**
+  - Iterative progress tracking
+  - Continuous learning and adaptation
+  - Automated milestone management
+
+- **Intelligent Memory Layers**
+  - Project-specific source of truth
+  - Dynamic task and insight tracking
+  - Automated context restoration
+
+- **Workflow Optimization**
+  - Proactive task management
+  - Automatic lesson learning
+  - Continuous improvement protocols
 
 ## Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/yourusername/RuleSurf.git
+   git clone https://github.com/[yourusername]/RuleSurf.git
    cd RuleSurf
    ```
 
 2. Explore the project structure:
-   - `global_rules.md`: Universal development practices and command shorthands
-   - `.windsurfrules`: Project-specific requirements and task tracking
-   - `resources/`: Additional support files and templates
+   - `global_rules.md`: Adaptive Project State (APS)
+   - `.windsurfrules`: Project source of truth (user-owned)
 
 ## Usage
 
@@ -61,11 +118,18 @@ RuleSurf is a comprehensive rule management system designed to enhance AI-assist
 - `/i`: Implement recent unadded changes
 - `/a`: Enable auto-execution mode
 
+The AI assistant will:
+
+- Maintain your Adaptive Project State
+- Track tasks and project insights
+- Provide continuous context management
+- Guide you through development cycles
+
 For a complete list of commands, refer to `global_rules.md`
 
 ## Contributing
 
-Love RuleSurf and want to help improve it? Awesome! 🚀
+Love RuleSurf and want to help improve it? Awesome!
 
 While this project is primarily a personal tool, I'm totally open to collaboration. If you have ideas, suggestions, or improvements:
 
@@ -76,12 +140,8 @@ While this project is primarily a personal tool, I'm totally open to collaborati
 
 Your contributions are welcome, whether it's a typo fix, documentation improvement, or a cool new feature. Let's make RuleSurf even better together!
 
-## License
-
-This project is licensed under the MIT License - see the `LICENSE` file for details.
-
 ## Project Status
 
-Under Active Development 
+Under Active Development
 
 Suggestions and feedback are always appreciated!

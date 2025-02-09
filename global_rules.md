@@ -1,4 +1,4 @@
-# Persistent User-Defined Rules (edited 2/7/25)
+# Persistent User-Defined Rules
 
 ## User-defined Rules
 
@@ -57,17 +57,18 @@
 
 ### progress
 
-    /k    == Confirm last command success (packages, moves, restarts)
-    /n    == Propose next milestone actions
-    /b    == Detail next code changes
-    /c    == Output requestable code snippet
-    /i    == Implement recent unadded changes
+    k     == continue workflow (unblock AI assistant)
+    go    == Minimal confirmations, execute tasks sequentially /a
+    /p    == Propose next steps and actions
+    /o    == Output copyable code snippet
+    /po   == Output next steps, flow actions and specific code changes
+    /i    == Implement proposed changes
     /a    == Enable auto-execution mode
-    go    == Minimal confirmations, execute tasks sequentially
 
 ### eval
 
-    council == Multi-LLM polling: 1st LLM deeply analyzes issue, user selects additional LLMs for opinions (max 5). Synthesize best solution with CL%
+    council == multi-step analysis. user responds with a number to request next perspective
+    vote   == Synthesize all council insights in a single best response(+CL%)
     /e     == Contextual idea/edit evaluation
     /cl    == Confidence Level assessment
     /h     == Hallucination risk assessment
@@ -89,24 +90,24 @@
     fix    == Correct behavior based on current context
     retry  == Reassess progress without confirmation
     fail   == Revert breaking changes, retry with error context
-    circ   == Analyze recurring error patterns
+    circ   == Analyze circular recurring error patterns
     finish == Complete partial fix implementation
 
 ### memory and context management
 
-    init    == Start session by reviewing all memories and restoring last TaskList+Scratchpad to @global_rules.md
+    init    == Start session by reviewing all memories and restoring last APS to @global_rules.md
             - Restore on `init`
 
                 ```powershell
-                    Copy-Item "$backup_dir\last_valid_TLSP.md" -Destination $global_rules_path
+                    Copy-Item "$backup_dir\last_valid_APS.md" -Destination $global_rules_path
                 ```
     addmem  == Record key context internally
-    pause   == Review memories, check for plan deviation from @.windsurfrules, update TLSP to match current project state 
-    save    == save relevant context to memory + @global_rules.md TaskList+Scratchpad
+    pause   == Review memories, check for plan deviation from @.windsurfrules, update APS to match current project state 
+    save    == Save relevant context to memory + @global_rules.md APS
             - Backup on `save`
 
                 ```powershell
-                    Copy-Item $global_rules_path -Destination "$backup_dir\$timestamp_TLSP.md"
+                    Copy-Item $global_rules_path -Destination "$backup_dir\$timestamp_APS.md"
                 ```
     duh     == Confirm tool capabilities
     btw     == Log unrelated issues without losing priority
@@ -114,7 +115,7 @@
     clean   == Force context consolidation
     pattern == Explain current context pattern
     clarity == Summarize context clarity
-   
+
 ## RPC (Recursive Project Cycle)
 
     1. user: ideate and clarify, build complete Project Prompt 
@@ -137,75 +138,40 @@
 
 ### Internal Memories
 
-Technical learnings to prevent mistakes:
+    Technical learnings to prevent mistakes:
+    - Version matrices/conflicts
+    - Debug breakthroughs
+    - Dependency states
+    - Error patterns
+    - AI-only implementation notes
 
-- Version matrices/conflicts
-- Debug breakthroughs
-- Dependency states
-- Error patterns
-- AI-only implementation notes
+### Global Rules
 
-### User Project Rules (.windsurfrules) - AI read/suggest-only
-
-    - User owns Project Prompt & Requirements: Project-specific prompt w/ AI-assisted setup planning (tech stack, detailed project plan) per RDC
-
-### Global Rules and AI-maintained Project State (this file)
-    - User-defined rules
-    - Commands
-    - AI updates as task status changes or lessons learned (add below):
+    - User-defined rules and commands (above)
+    - AI-maintained Adaptive Project State - AI updates as task status changes or lessons learned (add/update below):
         - Tasks with progress:
-            ✅ Done
-            ⚒️ In Progress
-            ⏹️ Todo
-            💡 Enhancement idea
+            [  ] Specific task
+            [⚒️] In Progress
+            [✅] Done
+            [💡] Enhancement idea
+            [⛔] Blocked
             - Include: effort, deps, risks
-        - Post-milestone reflections
-        - Autoamted, iterative context preservation via ## Project Lessons Learned /ScratchPad (add below)
+        - Automated, iterative context preservation via APS
 
+## Adaptive Project State (APS)
 
-## Live Project Task List
+### Live Project Task List
 
-## Completed Tasks
-✅ Develop dynamic rule handling system
-✅ Implement command definition protocol
-✅ Create reminder mechanism
-✅ Establish recursive development cycle guidelines
-✅ Refined Context Management Protocol
-✅ Added Context Saturation Notification (CSN)
-✅ Updated command definitions
-✅ Corrected typos and formatting
-✅ Streamlined global rules framework
-✅ Created ProjectPrompt.md as central reference
+    [AI: I maintain this section to track progress across sessions. Update status markers as tasks progress.]
+    - Keep task tracking current for cross-session continuity
 
-## In Progress
-⚒️ Finalize RuleSurf v1.0 publication strategy
-⚒️ Optimize context management protocols
-⚒️ Develop cross-project rule synchronization mechanism
+### Adaptive Project Lessons
 
-## Upcoming
-⏹️ Create GitHub repository structure
-⏹️ Develop comprehensive README.md
-⏹️ Implement automated rule validation script
-⏹️ Design contribution guidelines
+    [AI: I maintain this section to preserve important context between sessions. Focus on high-level insights that complement my internal technical memories.]
+    - Document lessons that inform future cycles
 
-## Suggested Enhancements
-💡 Create visualization for rule evolution
-💡 Develop AI-assisted rule recommendation system
-💡 Implement cross-IDE compatibility framework
+### Development Guidelines
 
-## Project Lessons Learned
-
-### Context Management Insights
-1. Flexible rule systems are critical for adaptive development
-2. Context saturation monitoring prevents cognitive overload
-3. Granular command definitions improve AI-human collaboration
-
-### Technical Strategy Learnings
-- Modular approach to rule definition allows easier updates
-- Version tracking of rules provides clear evolution path
-- Multi-LLM polling increases solution confidence
-
-### Workflow Optimization
-- Recursive development cycle minimizes context switching
-- Proactive error prevention more effective than reactive debugging
-- Regular rule refinement is key to maintaining system effectiveness
+    [AI: Review these at the start of each RPC phase]
+    - Validate direction with user before phase transitions
+    - Maintain alignment with user's workflow preferences

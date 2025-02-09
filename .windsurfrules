@@ -1,40 +1,67 @@
-# RuleSurf Project
+# Project Configuration Template
 
-## Overview
-RuleSurf is a comprehensive yet practical rule system for AI-assisted development, designed to maximize productivity while maintaining high quality standards. It combines clear operational guidelines with flexible command structures and robust context management.
+## 1. Project Prompt
 
-## Core Components
+### Description
 
-### 1. Rule Management
-- Dynamic rule addition through user commands
-- Clear categorization of critical vs. operational rules
-- Version tracking and regular updates
+[Concise project description]
 
-### 2. Development Workflow
-- Recursive Development Cycle (RDC) for iterative progress
-- Focus on user-testable scaffolding before detailed implementation
-- Continuous validation and error prevention
+### Goals
 
-### 3. Context Management
-- Proactive monitoring of context saturation
-- Clear thresholds for context management (75/90/95%)
-- Structured process for context preservation and recovery
+[List of project goals]
 
-### 4. Command System
-- Extensive set of flow action commands
-- Platform-specific considerations (Win11)
-- Error handling and recovery procedures
+## 2. Requirements
 
-## Success Criteria
-1. Rules remain practical and actionable
-2. System adapts to user needs while maintaining structure
-3. Context management prevents information loss
-4. Commands cover all common scenarios efficiently
+### Dependencies
 
-## Implementation Notes
-- All rules and updates tracked in `global_rules.md`
-- Progress tracked in `TaskList.md`
-- Working notes and lessons in `ScratchPad.md`
-- Regular evaluation of rule effectiveness
+[List of dependencies and versions]
 
-Last Updated: 2/6/25
+### API Keys
+
+[List of required API keys]
+
+### Environment Variables
+
+[List of required environment variables]
+
+## 3. AI-Generated Plan
+
+### Milestones
+
+[List of project milestones]
+
+### Tasks
+
+[List of tasks for each milestone]
+
+## 4. Stack Specification
+
+### Programming Languages
+
+[List of programming languages used]
+
+### Frameworks
+
+[List of frameworks used]
+
+### Libraries
+
+[List of libraries used]
+
+### Tools
+
+[List of tools used]
+
+## 5. Lessons Learned
+
+### Mistakes
+
+[List of mistakes and corrections]
+
+### Reusable Components
+
+[List of reusable components and versions]
+
+### Patterns
+
+[List of successful patterns]
