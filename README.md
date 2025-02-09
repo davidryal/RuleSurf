@@ -4,6 +4,32 @@
 
 RuleSurf is a comprehensive rule management system designed to enhance AI-assisted development workflows. It provides a structured approach to defining, tracking, and evolving development guidelines, commands, and best practices.
 
+## Setup for Windsurf Users
+
+### Initial Configuration
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/RuleSurf.git
+   cd RuleSurf
+   ```
+
+2. Configure Windsurf IDE:
+   - Copy `.windsurfrules` to your Windsurf project directory
+   - Review and customize `global_rules.md` to match your development workflow
+
+### File Purpose Guide
+
+- `.windsurfrules`: Project-specific rules and task tracking
+- `global_rules.md`: Universal development practices and command shorthands
+- `resources/`: Additional support files and templates
+
+### Customization Tips
+
+- Always maintain separation between project-specific and global rules
+- Use `global_rules.md` for universal guidelines
+- Use `.windsurfrules` for project-specific configurations
+
 ## Key Features
 
 - Dynamic rule addition and tracking
@@ -39,7 +65,7 @@ For a complete list of commands, refer to `global_rules.md`
 
 ## Contributing
 
-Love RuleSurf and want to help improve it? Awesome! 
+Love RuleSurf and want to help improve it? Awesome! 🚀
 
 While this project is primarily a personal tool, I'm totally open to collaboration. If you have ideas, suggestions, or improvements:
 
@@ -56,6 +82,6 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 ## Project Status
 
- Under Active Development 
+Under Active Development 
 
 Suggestions and feedback are always appreciated!
