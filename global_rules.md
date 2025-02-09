@@ -95,20 +95,19 @@
 
 ### memory and context management
 
-    init    == Start session by reviewing all memories and restoring last APS to @global_rules.md
-            - Restore on `init`
+    init    == Start session by reviewing all memories and restoring last APS to @global_rules.md. Refer to @COMMANDS.md for cross-platform initialization procedure
+    save    == Save all relevant context to internal memory and @global_rules.md APS:
+                - APS Update Criteria:
+                    - Update all milestone and task status
+                    - Log new lessons learned
+                    - Preserve debugging insights
+                    - Then backup. Refer to @COMMANDS.md for cross-platform backup procedure
 
-                ```powershell
-                    Copy-Item "$backup_dir\last_valid_APS.md" -Destination $global_rules_path
-                ```
+
+    # Actual implementation details stored externally to reduce token consumption
+
     addmem  == Record key context internally
     pause   == Review memories, check for plan deviation from @.windsurfrules, update APS to match current project state 
-    save    == Save relevant context to memory + @global_rules.md APS
-            - Backup on `save`
-
-                ```powershell
-                    Copy-Item $global_rules_path -Destination "$backup_dir\$timestamp_APS.md"
-                ```
     duh     == Confirm tool capabilities
     btw     == Log unrelated issues without losing priority
     /m      == Context saturation (CS) check
@@ -124,7 +123,7 @@
       b. AI: milestones, tasks → @global_rules.md (below)
     3. AI: set up clean project environment, dependencies, app template
     4. both: component subcycle: 
-      a. AI:build component from plan
+      a. AI: build component from plan
       b. user: test component
       c. both: debug
       d. AI: fix errors (recurse b-d)
@@ -139,11 +138,16 @@
 ### Internal Memories
 
     Technical learnings to prevent mistakes:
+
     - Version matrices/conflicts
     - Debug breakthroughs
     - Dependency states
     - Error patterns
     - AI-only implementation notes
+
+### User Project Rules (.windsurfrules) - AI read/suggest-only
+
+    - User owns Project Prompt & Requirements: Project-specific prompt w/ AI-assisted setup planning (tech stack, detailed project plan) per RDC
 
 ### Global Rules
 
@@ -156,14 +160,7 @@
             [💡] Enhancement idea
             [⛔] Blocked
             - Include: effort, deps, risks
-        - Automated, iterative context preservation via APS
-
-## Adaptive Project State (APS)
-
-### Live Project Task List
-
-    [AI: I maintain this section to track progress across sessions. Update status markers as tasks progress.]
-    - Keep task tracking current for cross-session continuity
+        - Automated, iterative context preservation via APS (below)
 
 ### Adaptive Project Lessons
 
