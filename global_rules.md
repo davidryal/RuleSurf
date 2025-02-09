@@ -153,22 +153,38 @@
 
     - User-defined rules and commands (above)
     - AI-maintained Adaptive Project State - AI updates as task status changes or lessons learned (add/update below):
-        - Tasks with progress:
+        - Task list with progress indicators:
             [  ] Specific task
             [⚒️] In Progress
             [✅] Done
             [💡] Enhancement idea
             [⛔] Blocked
             - Include: effort, deps, risks
-        - Automated, iterative context preservation via APS (below)
+        - Adaptive Project Insights:
+            - Automatically and iteratively update with lessons learned
 
-### Adaptive Project Lessons
+## Adaptive Project State (APS)
 
-    [AI: I maintain this section to preserve important context between sessions. Focus on high-level insights that complement my internal technical memories.]
-    - Document lessons that inform future cycles
+### Task List
 
-### Development Guidelines
+    [AI Template Guidance]
+    - This section is a LIVING document for tracking progress across sessions
+    - Use status markers to indicate task state:
+        [✅] Completed
+        [⚒️] In Progress
+        [💡] Enhancement Idea
+        [⛔] Blocked
+    - Capture cross-session task continuity
+    - Update markers as project evolves whenver a task is completed or 'save' initiated
 
-    [AI: Review these at the start of each RPC phase]
-    - Validate direction with user before phase transitions
-    - Maintain alignment with user's workflow preferences
+### Adaptive Project Insights
+
+    [AI Knowledge Preservation Protocol]
+    - Document high-level insights that transcend current project
+    - Capture:
+        * Technical breakthroughs
+        * Architectural decisions
+        * Workflow optimizations
+        * Lessons learned from challenges
+    - Focus on generalizable knowledge
+    - Maintain a forward-looking perspective
