@@ -1,0 +1,29 @@
+# Backup directory
+/backups/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Environment and dependency directories
+node_modules/
+.env
+.venv
+venv/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
