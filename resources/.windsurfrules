@@ -1,0 +1,181 @@
+# Persistent User-Defined Rules (edited 2/7/25)
+
+## User-defined Rules
+
+    0. Proactively update @global_rules.md regularly
+    1. Prioritize user-testable scaffolding: build navigation and core pages first (if no UI specified, make it "modern"), then fill in component functionality
+    2. Never invent functionality or UI changes without explicit user direction
+    3. When completing a component, clearly describe verification steps for user testing
+    4. Automatically check @current_problems logs post-changes: analyze errors, propose CL%-rated solutions, preserve critical context
+    5. If user repeats similar instruction 3+ times, suggest creating a new Command
+    6. Maximize web searches: use multiple concurrent searches aggressively
+    7. Analytical Reasoning Justification Protocol
+      - Provide evidence-based rationale for choices
+      - Confidence Level (CL%) assessment:
+        - Scale: 1-100% (100% = absolute certainty)
+        - Considerations: 
+          - Completeness
+          - Robustness
+          - Alignment
+          - Previous experience
+        - CL% = average of consideration scores
+    8. During troubleshooting, strictly adhere to established technical requirements
+    9. When global_rules change, verbally grade changes with:
+      - Brief justification
+      - Risks/benefits analysis
+      - Confidence Level (`/cl`)
+    10. Always read files before editing
+    11. Check if files exist before you try to create them
+    12. Assume edit & websearch access by default; retry if uncertain
+    13. Automatically execute Flow Actions independently:
+        ## Flow Action = Any tool-based API interaction
+          - Codebase semantic search
+          - Grep pattern search
+          - File/directory operations
+          - Web searches
+          - File/code content analysis
+          - Code item inspection
+          - Directory listing
+          - File creation/modification
+          - Memory management
+          - Terminal commands
+          - Code execution
+    14. Notify user and update global_rules.md Project Prompt if project requirements change
+    15. Windows 11 Development Protocols:
+          - Use PowerShell syntax (`;` not `&&`)
+          - Combine PowerShell commands efficiently
+          - Anticipate Windows-specific deployment nuances
+          - Handle Windows-specific paths
+          - Ensure CRLF line endings
+
+## Operational Protocols
+
+### Memory/Rule Hierarchy
+
+#### User Rules (.windsurfrules)
+
+- Core rules and standards
+- Command definitions
+- AI read/suggest-only
+
+#### Project State (global_rules.md)
+
+1. User owns Project Prompt & Requirements
+2. AI maintains:
+   - Tasks with progress:
+     ✅ Done
+     ⚒️ In Progress
+     ⏹️ Todo
+     💡 Enhancement
+   - Include: effort, deps, risks
+3. Post-milestone reflections
+4. Context preservation
+
+#### Internal Memories
+
+Technical learnings to prevent mistakes:
+
+- Version matrices/conflicts
+- Debug breakthroughs
+- Dependency states
+- Error patterns
+- AI-only implementation notes
+
+#### SPP (Stupid Prevention)
+
+Monitor context saturation:
+
+- 80% → Save context:
+    1. Update global_rules.md
+       - Tasks, decisions, risks
+    2. Save tech context
+    3. List open threads
+- 95% → Save Megamemory
+- Always explain why
+
+### State Management
+
+- Session state backup
+- Project transitions
+- Context preservation
+
+#### Backup
+
+```powershell
+       Copy-Item $global_rules_path -Destination "$backup_dir\$timestamp_rules.md"
+```
+
+#### Restore
+
+```powershell
+    Copy-Item "$backup_dir\last_valid_rules.md" -Destination $global_rules_path
+```
+
+## User-defined Commands
+
+### progress
+
+/k    == Confirm last command success (packages, moves, restarts)
+/n    == Propose next milestone actions
+/b    == Detail next code changes
+/c    == Output requestable code snippet
+/i    == Implement recent unadded changes
+/a    == Enable auto-execution mode
+go    == Minimal confirmations, execute tasks sequentially
+
+### eval  
+
+council == Multi-LLM polling: 1st LLM deeply analyzes issue, user selects additional LLMs for opinions (max 5). Synthesize best solution with CL%
+/e    == Contextual idea/edit evaluation
+/cl   == Confidence Level assessment
+/h    == Hallucination risk assessment
+clin  == Clarify if ambiguous
+/j    == Evaluate previous responses
+syn   == Synthesize multi-LLM responses
+++    == Verify for 100% confidence
+++s   == Web search to increase confidence
+drift == Check implementation against global_rules.md
+align == Resync project with global_rules.md
+huh   == Verify user expectation match
+sm    == Break into smaller contexts
+
+### bugfixing
+
+/r    == Report current status, evaluate, propose next steps
+??    == Deep error context analysis
+fix   == Correct behavior based on current context
+retry == Reassess progress without confirmation
+fail  == Revert breaking changes, retry with error context
+circles == Analyze recurring error patterns
+next  == Continue recent context
+finish == Complete partial implementation
+
+### memory and context management
+
+duh   == Confirm tool capabilities
+aside == Log unrelated issues without losing priority
+addmem== Record key context internally
+save  == Composite: save tech context, update todos
+pause == Review memories, update context
+init  == Start session by reviewing all memories
+[+|-]d== Adjust explanation depth
+pattern== Explain current context pattern
+clarity== Summarize context clarity
+/m     == Context saturation (SPP) check
+clean == Force context consolidation
+
+## RDC (Recursive Dev Cycle) in `global_rules.md`
+
+    1. user: ideate and clarify, build complete Project Prompt 
+    2. AI: make detailed, right-ordered project-long living memory plan: stack, milestones, tasks
+    3. AI: set up clean project environment, dependencies, app template
+    4. both: component subcycle: 
+      a. AI:build component from plan
+      b. user: test component
+      c. both: debug
+      d. AI: fix errors (recurse b-d)
+      e. AI:add core tests for new component
+      f. AI: run tests
+      g. AI: fix errors until they pass (recurse f-g)
+    5. AI: build next component from plan (recurse: 6...n)
+     user:final QA & hand-off 🎉

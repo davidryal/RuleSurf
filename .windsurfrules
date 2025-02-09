@@ -1,0 +1,40 @@
+# RuleSurf Project
+
+## Overview
+RuleSurf is a comprehensive yet practical rule system for AI-assisted development, designed to maximize productivity while maintaining high quality standards. It combines clear operational guidelines with flexible command structures and robust context management.
+
+## Core Components
+
+### 1. Rule Management
+- Dynamic rule addition through user commands
+- Clear categorization of critical vs. operational rules
+- Version tracking and regular updates
+
+### 2. Development Workflow
+- Recursive Development Cycle (RDC) for iterative progress
+- Focus on user-testable scaffolding before detailed implementation
+- Continuous validation and error prevention
+
+### 3. Context Management
+- Proactive monitoring of context saturation
+- Clear thresholds for context management (75/90/95%)
+- Structured process for context preservation and recovery
+
+### 4. Command System
+- Extensive set of flow action commands
+- Platform-specific considerations (Win11)
+- Error handling and recovery procedures
+
+## Success Criteria
+1. Rules remain practical and actionable
+2. System adapts to user needs while maintaining structure
+3. Context management prevents information loss
+4. Commands cover all common scenarios efficiently
+
+## Implementation Notes
+- All rules and updates tracked in `global_rules.md`
+- Progress tracked in `TaskList.md`
+- Working notes and lessons in `ScratchPad.md`
+- Regular evaluation of rule effectiveness
+
+Last Updated: 2/6/25
